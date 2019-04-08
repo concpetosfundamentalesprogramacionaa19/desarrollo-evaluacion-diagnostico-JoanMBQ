@@ -1,0 +1,47 @@
+Algoritmo solucion
+	Definir numAutos, i, col, arg, chile, otros Como Entero
+	Definir costo, iva, costo_total, suma_total_costo, acum Como Real
+	Definir marca, origen Como Caracter
+	Escribir "Ingrese el numero de autos importados"
+	Leer numAutos
+	Para i<-1 Hasta numAutos Con Paso 1 Hacer
+		Escribir "Ingrese la marca del vehiculo ", +i
+		Leer marca
+		Escribir "Ingrese el costo del auto ", +i
+		Leer costo
+		Escribir "Ingrese el origen del auto ", +i
+		Leer origen
+		Si (origen=="argentina")o(origen=="Argentina") Entonces
+			iva<-0.20
+			arg<-arg+1
+			costo2<-imp+costo
+		SiNo
+			Si (origen=="colombia")o(origen=="Colombia") Entonces
+				iva<-0.25
+				col<-col+1
+				costo2<-imp+costo
+			SiNo
+				Si (origen=="chile")o(origen=="Chile") Entonces
+					iva<-0.30
+					chile<-chile+1
+					costo2<-imp+costo
+				SiNo
+					iva<-0.40
+					otros<-otros+1
+					costo2<-imp+costo
+				Fin Si
+			Fin Si
+		Fin Si
+		imp<-costo*iva
+		acum<-imp
+		ivatotal<-acum
+		costo_total<-costo+(costo*iva)
+	Fin Para
+	Escribir "El total de autos importados es: ", +numAutos
+	Escribir "El total de impuestos generados es: ",+ivatotal
+	Escribir "El Costo total de todos los autos es: ", +costo_total
+	Escribir "Total de autos importados de Argentina: ",+arg
+	Escribir "Total de autos importados de Colombia: ",+col
+	Escribir "Total de autos importados de Chile: ",+chile
+	Escribir "Total de autos importados de otros paises: ",+otros
+FinAlgoritmo
